@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AppCoordinator: NSObject,Coordinator {
+final class AppCoordinator: Coordinator {
   let window: UIWindow
   let rootViewController: UINavigationController
   private var signInViewController: SignInViewController?
@@ -22,10 +22,10 @@ final class AppCoordinator: NSObject,Coordinator {
     let signInVc = storyboard.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
     rootViewController.pushViewController(signInVc, animated: false)
     signInViewController = signInVc
-    signInVc.delegate = self
   }
   
   func start() {
+    signInViewController?.delegate = self
     window.rootViewController = rootViewController
     window.makeKeyAndVisible()
   }
@@ -35,5 +35,6 @@ extension AppCoordinator: SignInDelegate {
   func signInPassed() {
     let signInCoordinator = SignInCoordinator(presenter: rootViewController)
     self.signInCoordinator = signInCoordinator
+    self.signInCoordinator?.start()
   }
 }

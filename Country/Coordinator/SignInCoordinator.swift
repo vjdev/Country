@@ -10,7 +10,8 @@ import UIKit
 
 class SignInCoordinator: Coordinator {
   private let presenter: UINavigationController
-  private var signInViewController: SignInViewController?
+  private var countryListViewController: CountryListViewController?
+  private var countryListCoordinator: CountryCoordinator?
 
   
   
@@ -19,5 +20,19 @@ class SignInCoordinator: Coordinator {
   }
   
   func start() {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let countryVC = storyboard.instantiateViewController(withIdentifier: "CountryListViewController") as! CountryListViewController
+    countryVC.delegate = self
+    presenter.pushViewController(countryVC, animated: false)
   }
 }
+
+
+extension SignInCoordinator: CountryListDelegate {
+  func countrySelected(country: Country) {
+    let coordinator = CountryCoordinator(presenter: presenter)
+    self.countryListCoordinator = coordinator
+    self.countryListCoordinator?.start()
+  }
+}
+

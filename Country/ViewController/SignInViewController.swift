@@ -23,6 +23,8 @@ final class SignInViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    validationBinding()
   }
   
 
@@ -41,7 +43,7 @@ final class SignInViewController: UIViewController {
   }
   
   private func navigateToHomescreen() {
-    
+    delegate?.signInPassed()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
