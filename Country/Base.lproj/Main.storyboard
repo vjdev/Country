@@ -34,7 +34,7 @@
                                 <rect key="frame" x="166" y="369" width="43" height="30"/>
                                 <state key="normal" title="SignIn"/>
                                 <connections>
-                                    <action selector="signInButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCH-kp-dwv"/>
+                                    <action selector="signInButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0xD-Aj-fee"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -6,7 +6,7 @@
 //  Copyright © 2018 vijeesh. All rights reserved.
 //
 
-import Foundation
+import UIKit
 extension UIViewController {
   func showAlertWith(errorMessage message: String) {
     let alert = UIAlertController(title: "", message: message, preferredStyle:.alert)
