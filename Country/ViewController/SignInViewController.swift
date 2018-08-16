@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol SignInDelegate: class {
+  func signInPassed()
+}
+
 final class SignInViewController: UIViewController {
   
   @IBOutlet private weak var userNameTextField: UITextField!
   @IBOutlet private weak var passwordTextField: UITextField!
   
   private var viewModel = SignInViewModel()
+  weak var delegate: SignInDelegate?
 
   
   override func viewDidLoad() {
