@@ -9,15 +9,19 @@
 import UIKit
 
 final class CountryDetailViewController: UIViewController {
-
+  
   @IBOutlet private weak var countryNameLabel: UILabel!
   @IBOutlet private weak var flagImageView: UIImageView!
+  var country: Country?
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
+    if let countryName = self.country?.name {
+      self.countryNameLabel.text = countryName
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
 }

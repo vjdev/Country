@@ -30,7 +30,7 @@ class SignInCoordinator: Coordinator {
 
 extension SignInCoordinator: CountryListDelegate {
   func countrySelected(country: Country) {
-    let coordinator = CountryCoordinator(presenter: presenter)
+    let coordinator = CountryCoordinator(presenter: presenter, country: country)
     self.countryListCoordinator = coordinator
     self.countryListCoordinator?.start()
   }
