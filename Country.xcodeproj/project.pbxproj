@@ -29,6 +29,7 @@
 		973924B9211DD658009D7EAC /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973924B8211DD658009D7EAC /* Country.swift */; };
 		973924BD211DD686009D7EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973924BC211DD686009D7EAC /* ViewController.swift */; };
 		9739D46921255982009625A9 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739D46821255982009625A9 /* SignInCoordinator.swift */; };
+		9769D6182126FE7200616FC0 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769D6172126FE7200616FC0 /* Optional.swift */; };
 		E41DB183493E254FD9ECE8BF /* Pods_Country.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EDA98EF07B9BC8298DC48C /* Pods_Country.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		973924B8211DD658009D7EAC /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		973924BC211DD686009D7EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9739D46821255982009625A9 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		9769D6172126FE7200616FC0 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		AEC00124724E1E2CEB70C1E8 /* Pods-CountryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryTests/Pods-CountryTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3562D944CB3D2EA29736066 /* Pods-CountryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryTests/Pods-CountryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF4D29127F34ABC21F9CED37 /* Pods_CountryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				973924BC211DD686009D7EAC /* ViewController.swift */,
+				9769D6172126FE7200616FC0 /* Optional.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				973924B9211DD658009D7EAC /* Country.swift in Sources */,
 				9739D46921255982009625A9 /* SignInCoordinator.swift in Sources */,
 				973924A7211DCE30009D7EAC /* SignInViewController.swift in Sources */,
+				9769D6182126FE7200616FC0 /* Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

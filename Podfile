@@ -6,7 +6,6 @@ target 'Country' do
   use_frameworks!
 
   # Pods for Country
-  pod 'SwiftLint'
 
   target 'CountryTests' do
     inherit! :search_paths

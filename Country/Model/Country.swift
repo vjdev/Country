@@ -12,5 +12,9 @@ final class Country: Codable {
   var capital : String?
   var region : String?
   var subregion : String?
-  var flag : String?
+  var population : Int?
+  var demonym : String?
+  var area : Double?
+  var nativeName : String?
+  var numericCode : String?
 }
