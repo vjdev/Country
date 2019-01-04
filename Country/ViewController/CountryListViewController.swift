@@ -8,30 +8,54 @@
 
 import UIKit
 
+protocol CountryListDelegate: class {
+  func countrySelected(country: Country)
+}
+
 final class CountryListViewController: UIViewController {
   
   @IBOutlet private weak var countryListTableView: UITableView!
+  private var viewModel = CountryListViewModel()
+  private var countryList: [Country]?
+  private let cellIdentifier = "Cell"
+  weak var delegate: CountryListDelegate?
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      binding()
     }
+  
+  private func binding() {
+    viewModel.countryList.bind { [unowned self] (arrayOfCountries) in
+      self.countryList = arrayOfCountries
+      self.countryListTableView.reloadData()
+    }
+  }
 }
 
 
 extension CountryListViewController: UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 1
+    if let contents = countryList {
+      return contents.count
+    }
+    return 0
   }
   
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+    let country = countryList![indexPath.row]
+    delegate?.countrySelected(country: country)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: UITableViewCell = self.countryListTableView.dequeueReusableCell(withIdentifier: "cellIdentifier")!
-    cell.selectionStyle = .none
-    cell.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+    var cell : UITableViewCell!
+    cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+    if cell == nil {
+      cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+    }
+    let country = countryList![indexPath.row]
+    cell.textLabel?.text = country.name
     return cell
   }
 
